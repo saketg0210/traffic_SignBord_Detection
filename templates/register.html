@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <!-- Favicons -->
+  <link href="assets/img/favico.png" rel="icon">
+  <link href="assets/img/apple-touch-ico.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="./static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="..\static\css\registerr.css">
+  <script>
+    function myFunction() {
+      var x = document.getElementById("pwd");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
+  <style>
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    .background{
+      height: 100%;
+      width: 100%;
+      background: url(../static/img/hero-carousel/skin1.jpg) no-repeat fixed;
+       background-size: cover;
+       background-position: center;
+    
+    }
+    .background:after{
+      position: fixed;
+      content: '';
+      top:0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background:rgba(0,0,0,0.7);
+    }
+    .formcont{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center align-items-center">
+        <div class="col-xl-11 d-flex align-items-center justify-content-between">
+          <h1 class="logo"><a href="{{ url_for('index')}}">Traffic Sign </a></h1>
+  <nav id="navbar" class="navbar">
+    <ul>
+       <ul>
+      <li><a class="nav-link scrollto active" href="{{ url_for('index')}}">Home</a></li>
+      
+      <li><a class="nav-link scrollto" href="{{ url_for('login')}}">Login</a></li>
+    </ul>
+    
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav>
+</div>
+</div>
+
+</div>
+</header>
+<div class="formcont">
+  <form class="form" action="" method="post">
+    <h2 class="title">Register </h2>
+    <h3> {{msg}} </h3>
+        <div class="flex">
+        <label>
+            <input required="" type="text" name="uname" class="input">
+            <span>Username</span>
+        </label>
+      </div>  
+        <label>
+        <input required="" placeholder="" name="pwd" type="password" class="input">
+        <span>Password</span>
+    </label>        
+    <label>
+        <input required="" placeholder="" name="email" type="email" class="input">
+        <span>Email</span>
+    </label> 
+        
+    <label>
+        <input required="" placeholder="" name="pno" type="phonenumber" class="input">
+        <span>Mobile Number</span>
+    </label>
+    <button class="submit">Submit</button>
+    <p class="signin">Already have an acount ? <a  href="{{ url_for('login')}}">Signin</a> </p>
+   
+</form>
+
+</div>
+</body>
+</html>
